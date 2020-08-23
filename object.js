@@ -2,17 +2,22 @@ const myInfo = {
     name: 'lao tzu',
     age: 22,
     proffession(){
-        console.log(`${this} am a programmer`);
+        console.log(this);
     },
     country(){
-        console.log(`${this} am from nigeria`);
+        console.log(this);
     },
     city(){
-        console.log(`${this} am from Abuja fct`);
+        console.log(this);
     }
 }
 
 
 myInfo.proffession();
-myInfo.country();
-myInfo.city();
+
+for (info in myInfo){
+    console.log(info);
+}
+
+const proffession = myInfo.proffession.bind(myInfo);
+proffession();
